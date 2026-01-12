@@ -1,4 +1,0 @@
-{
-  "task_description": "Amélrioation de la page favoris : \n- les vignettes du haut n'affiche pas les prix du produit quand on rentre dans la page.\n- un produit ne peut pas être 2 fois dans la page (s'il est dans les favoris il ne doit pas être dans les récemment consultés ni dans les suggestions, et s'il est dans produits vus récemment il ne doit pas être les suggestions)",
-  "workflow_type": "feature"
-}
