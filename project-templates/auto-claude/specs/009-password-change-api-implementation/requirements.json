@@ -1,0 +1,4 @@
+{
+  "task_description": "# Password Change API Implementation\n\nImplement the backend API endpoint for password change functionality in the customer account section. Currently marked as TODO in account.html.twig.\n\n## Rationale\nUsers cannot currently change their passwords through the account interface, which is a basic security and UX requirement. This addresses a known gap identified in the codebase.\n\n## User Stories\n- As a customer, I want to change my password so that I can maintain account security\n\n## Acceptance Criteria\n- [ ] Users can change their password from the account settings page\n- [ ] Password validation includes current password verification\n- [ ] Strong password requirements are enforced (min 8 chars, mixed case, numbers)\n- [ ] Success/error messages display appropriately\n- [ ] Session remains valid after password change\n",
+  "workflow_type": "feature"
+}

@@ -1,0 +1,107 @@
+{
+  "ui_ux_improvements": [
+    {
+      "id": "uiux-001",
+      "type": "ui_ux_improvements",
+      "title": "Add Live Search Results Preview to Search Modal",
+      "description": "Implement real-time search results preview as users type in the search modal, displaying product suggestions before form submission.",
+      "rationale": "Currently the search modal only shows 'Press Enter to see all results' hint after typing. Live search results significantly improve UX by reducing friction, helping users find products faster, and enabling discovery of related items they might not have searched for directly.",
+      "category": "usability",
+      "affected_components": ["components/Layout/SearchModal.html.twig"],
+      "screenshots": [],
+      "current_state": "The search modal has an input field with popular search suggestions. When users type more than 2 characters, they see a hint to press Enter. No live results are shown during typing.",
+      "proposed_change": "Add an Alpine.js-powered live search that: 1) Debounces input (300ms) after 3+ characters, 2) Fetches results from /api/front/products with title search, 3) Displays up to 5 product matches with images, titles, and prices, 4) Shows a 'See all X results' link to the full search page. Include skeleton loading state during fetch.",
+      "user_benefit": "Users can immediately see matching products without leaving the modal, reducing time-to-product by 50%+ and enabling quick navigation directly to desired items.",
+      "status": "draft",
+      "created_at": "2026-01-09T14:45:00.000Z"
+    },
+    {
+      "id": "uiux-002",
+      "type": "ui_ux_improvements",
+      "title": "Enhance 404 Error Page with Product Suggestions",
+      "description": "Transform the basic 404 page into a helpful landing page with search functionality and product recommendations.",
+      "rationale": "The current 404 page is minimal - just a large '404', brief text, and a home link. Users who land on broken links are high-intent visitors who deserve a better recovery path. An enhanced 404 can recover these potential customers.",
+      "category": "usability",
+      "affected_components": ["404.html.twig"],
+      "screenshots": [],
+      "current_state": "Basic 404 page with large error code, 'Page Not Found' title, explanation text, and single 'Back to Home' button. No search or product suggestions.",
+      "proposed_change": "Redesign 404 page to include: 1) Friendly illustration or icon instead of stark '404', 2) Inline search bar allowing users to search from the error page, 3) Grid of 4 featured/promo products below search, 4) Links to main category pages, 5) Contact support link. Keep the visual design consistent with the Moderna theme.",
+      "user_benefit": "Reduces bounce rate from error pages by giving users multiple paths to find what they need, transforming a dead-end into a discovery opportunity.",
+      "status": "draft",
+      "created_at": "2026-01-09T14:45:00.000Z"
+    },
+    {
+      "id": "uiux-003",
+      "type": "ui_ux_improvements",
+      "title": "Add Skeleton Loading States for Product Grids",
+      "description": "Implement skeleton placeholder animations for product card grids during data loading to improve perceived performance.",
+      "rationale": "Category pages and search results currently have no skeleton loading states - users see empty space or a simple spinner while products load. Skeleton loaders significantly improve perceived performance and reduce layout shift.",
+      "category": "performance",
+      "affected_components": [
+        "category.html.twig",
+        "components/Home/ProductsGrid.html.twig",
+        "components/Cart/Cart.html.twig"
+      ],
+      "screenshots": [],
+      "current_state": "Product grids appear instantly only after data is fully loaded. During loading, users see either empty space or the page without products. The cart empty state suggestions section has no loading indication.",
+      "proposed_change": "Create a reusable ProductCardSkeleton component that matches ProductCard dimensions. Add CSS @keyframes shimmer animation (left-to-right gradient). In Alpine.js product grid components, show 4-8 skeleton cards while loading=true. Use Tailwind's animate-pulse utility or custom shimmer for the effect. Include skeleton in: 1) Category product grids, 2) Search results, 3) Cart empty state suggestions, 4) Related products sections.",
+      "user_benefit": "Creates a perception of faster load times, reduces cumulative layout shift (CLS), and gives users confidence that content is loading.",
+      "status": "draft",
+      "created_at": "2026-01-09T14:45:00.000Z"
+    },
+    {
+      "id": "uiux-004",
+      "type": "ui_ux_improvements",
+      "title": "Improve Product Card Keyboard Accessibility",
+      "description": "Make the product card wishlist button accessible via keyboard navigation and ensure proper focus states.",
+      "rationale": "The wishlist button on product cards is only visible on mouse hover (opacity: 0 by default). This makes it completely inaccessible to keyboard users and screen reader users cannot discover the action without documentation.",
+      "category": "accessibility",
+      "affected_components": [
+        "src/UiComponents/Product/ProductCard.html.twig",
+        "assets/css/components/_product-card.css"
+      ],
+      "screenshots": [],
+      "current_state": "Wishlist button has opacity: 0 and transform: scale(0.8) by default. It only becomes visible on .product-card:hover. While there's an @media (hover: none) rule for touch devices, keyboard focus is not handled.",
+      "proposed_change": "1) Add :focus-visible selector to show wishlist button when focused via keyboard (.product-card:focus-within .product-card-wishlistBtn should also trigger visibility), 2) Add visible focus ring with outline or box-shadow matching the design system, 3) Add aria-label to the button describing its toggle state ('Add to wishlist' / 'Remove from wishlist'), 4) Ensure tabindex='0' is present. Update CSS to include .product-card-wishlistBtn:focus-visible { opacity: 1; transform: scale(1); outline: 2px solid var(--color-primary); outline-offset: 2px; }",
+      "user_benefit": "Enables keyboard-only users to add products to their wishlist, improving accessibility compliance (WCAG 2.1 AA) and expanding site usability to all users.",
+      "status": "draft",
+      "created_at": "2026-01-09T14:45:00.000Z"
+    },
+    {
+      "id": "uiux-005",
+      "type": "ui_ux_improvements",
+      "title": "Add Quantity Quick-Edit on Product Cards",
+      "description": "Enable users to add products to cart with quantity selection directly from product cards, reducing clicks to purchase.",
+      "rationale": "Currently, product cards only show product info and link to the detail page. Users must navigate to the product page to add items to cart. For returning customers or quick purchases, this adds unnecessary friction.",
+      "category": "interaction",
+      "affected_components": [
+        "src/UiComponents/Product/ProductCard.html.twig",
+        "assets/css/components/_product-card.css"
+      ],
+      "screenshots": [],
+      "current_state": "Product cards display image, title, and price. The only interactive element is the wishlist button (on hover). To add to cart, users must click through to the product detail page.",
+      "proposed_change": "Add an 'Add to Cart' button that appears on product card hover (similar to wishlist button position). For products without variants: 1) Single click adds 1 item and shows success feedback (cart icon animation), 2) Optional: hold/long-press reveals quantity selector (-/+). For products with variants: Button shows 'Select Options' and links to product page. Implement using Alpine.js x-data component that calls the existing cart API endpoint. Position the button at bottom of image area or in content section. Include loading spinner during add operation.",
+      "user_benefit": "Reduces time-to-cart from 3+ clicks to 1 click for simple products. Enables quick bulk-shopping behavior and improves conversion rate for returning customers.",
+      "status": "draft",
+      "created_at": "2026-01-09T14:45:00.000Z"
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-01-09T14:45:00.000Z",
+    "project": "moderna",
+    "total_ideas": 5,
+    "analysis_method": "static_code_analysis",
+    "components_analyzed": [
+      "Header.html.twig",
+      "SearchModal.html.twig",
+      "ProductCard.html.twig",
+      "Cart.html.twig",
+      "login.html.twig",
+      "404.html.twig",
+      "app.css",
+      "_product-card.css",
+      "tailwind.config.js",
+      "moderna_form_theme.html.twig"
+    ]
+  }
+}

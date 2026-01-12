@@ -1,0 +1,115 @@
+{
+  "complexity": "standard",
+  "workflow_type": "feature",
+  "confidence": 0.88,
+  "reasoning": "Single-file template modification (404.html.twig) with layout restructuring, link fixes, and translation verification. No external integrations, infrastructure changes, or new dependencies required. All patterns (translations, Twig templates, navigation components) already exist in the codebase.",
+
+  "analysis": {
+    "scope": {
+      "estimated_files": 2,
+      "estimated_services": 1,
+      "is_cross_cutting": false,
+      "notes": "Primary changes in 404.html.twig. Possibly minor CSS adjustments. Single template service."
+    },
+    "integrations": {
+      "external_services": [],
+      "new_dependencies": [],
+      "research_needed": false,
+      "notes": "No external integrations required. Uses existing Thelia template system and Twig translation filter."
+    },
+    "infrastructure": {
+      "docker_changes": false,
+      "database_changes": false,
+      "config_changes": false,
+      "notes": "Pure frontend template modification. No backend or infrastructure changes needed."
+    },
+    "knowledge": {
+      "patterns_exist": true,
+      "research_required": false,
+      "unfamiliar_tech": [],
+      "notes": "Translation system (|trans filter), Twig templates, and navigation patterns already established in codebase. Similar patterns found in other templates."
+    },
+    "risk": {
+      "level": "low",
+      "concerns": [
+        "Hardcoded category_id=1 links may point to non-existent categories",
+        "Moving sections could break responsive layout if not carefully handled",
+        "Need to verify all translated strings have translations available"
+      ],
+      "notes": "Low risk as this is an isolated error page. Changes won't affect core e-commerce flows. Easy to test and validate."
+    }
+  },
+
+  "task_breakdown": {
+    "primary_changes": [
+      "Move Quick Navigation section from bottom to top (after hero section)",
+      "Audit and fix inactive/broken buttons and links",
+      "Replace hardcoded category IDs with dynamic routing",
+      "Verify all text strings have |trans filter applied",
+      "Optimize page structure for better UX"
+    ],
+    "current_page_structure": [
+      "1. Hero Section (404 error message + Back to Home button)",
+      "2. Search Section (with popular searches)",
+      "3. Product Suggestions Section",
+      "4. Recently Viewed Section",
+      "5. Wishlist Section",
+      "6. Quick Navigation Section (NEEDS TO MOVE TO TOP)"
+    ],
+    "proposed_page_structure": [
+      "1. Hero Section (404 error message + Back to Home button)",
+      "2. Quick Navigation Section (MOVED HERE)",
+      "3. Search Section (with popular searches)",
+      "4. Product Suggestions Section",
+      "5. Recently Viewed Section",
+      "6. Wishlist Section"
+    ],
+    "identified_issues": {
+      "inactive_links": [
+        "category_id=1 hardcoded in multiple places - may not exist",
+        "?view=category&category_id=1 used as fallback for Shop",
+        "?view=account may need proper Thelia path()"
+      ],
+      "missing_translations": [
+        "All visible text appears to use |trans filter - OK",
+        "aria-labels also use translations - OK"
+      ]
+    }
+  },
+
+  "recommended_phases": [
+    "discovery",
+    "requirements",
+    "context",
+    "spec_writing",
+    "planning",
+    "validation"
+  ],
+
+  "flags": {
+    "needs_research": false,
+    "needs_self_critique": false,
+    "needs_infrastructure_setup": false
+  },
+
+  "validation_recommendations": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "minimal_mode": true,
+    "test_types_required": ["unit"],
+    "security_scan_required": false,
+    "staging_deployment_required": false,
+    "reasoning": "Low-risk template modification isolated to 404 error page. No security-sensitive code, no database changes. Manual visual testing recommended to verify layout and link functionality."
+  },
+
+  "improvement_suggestions": [
+    "Add breadcrumb navigation for better context",
+    "Include a 'Report broken link' feedback option",
+    "Add animated illustrations for more engaging UX",
+    "Consider adding a FAQ section for common questions",
+    "Add site map link for comprehensive navigation",
+    "Improve mobile touch targets for navigation cards"
+  ],
+
+  "created_at": "2025-01-09T12:00:00Z"
+}

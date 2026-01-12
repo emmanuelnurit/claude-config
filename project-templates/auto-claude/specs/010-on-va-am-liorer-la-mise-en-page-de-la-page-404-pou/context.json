@@ -1,0 +1,48 @@
+{
+  "task_description": "Améliorer la mise en page de la page 404 pour la rendre plus lisible : remonter les quick links sur la partie haute de la page, activer l'ensemble des boutons (la plupart sont inactifs), mettre les traductions sur l'ensemble des textes",
+  "scoped_services": ["moderna"],
+  "files_to_modify": [
+    "404.html.twig",
+    "translations/messages.fr_FR.yaml",
+    "translations/messages.en_US.yaml",
+    "translations/messages.es_ES.yaml",
+    "translations/messages.it_IT.yaml"
+  ],
+  "files_to_reference": [
+    "translations/messages.fr_FR.yaml",
+    "src/UiComponents/Product/ProductCard.html.twig",
+    "components/Product/RecentlyViewed.html.twig"
+  ],
+  "patterns": {
+    "translation_pattern": "Key = English source string, Value = Translated text. Use |trans filter in templates.",
+    "route_pattern": "Use {{ path('route_name') }} for internal navigation instead of hardcoded URLs",
+    "section_pattern": "Sections use BEM-like classes: error-section error-[name]-section with aria-labelledby"
+  },
+  "existing_implementations": {
+    "description": "404 page exists with 6 sections: Hero, Search, Products, Recently Viewed, Wishlist, Quick Navigation. Quick Navigation needs to move after Hero.",
+    "relevant_files": ["404.html.twig"],
+    "identified_issues": {
+      "hardcoded_urls": [
+        "Line 96: /?view=category&category_id=1 (Sale link)",
+        "Line 120: /?view=category&category_id=1 (Browse all products)",
+        "Line 171: /?view=wishlist (View wishlist)",
+        "Line 228: /?view=wishlist (More wishlist items)",
+        "Line 308: /?view=category&category_id=1 (Shop navigation)",
+        "Line 327: /?view=contact (Contact navigation)",
+        "Line 343: /?view=account (Account navigation)"
+      ],
+      "section_order": "Quick Navigation is at bottom (lines 273-360), should be after Hero (line 52)"
+    }
+  },
+  "missing_translations": {
+    "count": 25,
+    "examples": [
+      "Skip to search",
+      "Looking for something specific?",
+      "Quick Links",
+      "Here are some helpful links to get you back on track:"
+    ]
+  },
+  "created_at": "2026-01-09T15:17:15.226906",
+  "updated_at": "2026-01-09T16:00:00.000000"
+}

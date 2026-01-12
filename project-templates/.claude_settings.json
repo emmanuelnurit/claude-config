@@ -1,0 +1,34 @@
+{
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read(./**)",
+      "Write(./**)",
+      "Edit(./**)",
+      "Glob(./**)",
+      "Grep(./**)",
+      "Read(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/**)",
+      "Write(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/**)",
+      "Edit(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/**)",
+      "Glob(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/**)",
+      "Grep(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/**)",
+      "Read(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/.auto-claude/specs/015-ajoutons-un-champ-de-recherche-dans-le-header-pour/**)",
+      "Write(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/.auto-claude/specs/015-ajoutons-un-champ-de-recherche-dans-le-header-pour/**)",
+      "Edit(/Applications/Sites/Moderna_twig/thelia/templates/frontOffice/moderna/.auto-claude/specs/015-ajoutons-un-champ-de-recherche-dans-le-header-pour/**)",
+      "Bash(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "mcp__context7__resolve-library-id(*)",
+      "mcp__context7__get-library-docs(*)",
+      "mcp__graphiti-memory__search_nodes(*)",
+      "mcp__graphiti-memory__search_facts(*)",
+      "mcp__graphiti-memory__add_episode(*)",
+      "mcp__graphiti-memory__get_episodes(*)",
+      "mcp__graphiti-memory__get_entity_edge(*)"
+    ]
+  }
+}

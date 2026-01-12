@@ -1,0 +1,31 @@
+{
+  "task_description": "Amélioration de la page favoris: Fix price display on initial load and implement cross-section product deduplication (Favorites > Recently Viewed > Suggestions)",
+  "scoped_services": ["moderna"],
+  "files_to_modify": [
+    "wishlist.html.twig",
+    "components/Product/RecentlyViewed.html.twig"
+  ],
+  "files_to_reference": [
+    "assets/js/app.js"
+  ],
+  "patterns": {
+    "price_precalculation": "Use Twig get_taxed_price() and get_taxed_promo_price() functions for server-side price calculation, pass to JS via window.* global",
+    "exclusion_filter": "recentlyViewedComponent accepts excludeProductId parameter to filter single product - extend to array of IDs",
+    "alpine_store_access": "Access wishlist items via Alpine.store('wishlist').items, recentlyViewed via Alpine.store('recentlyViewed').items",
+    "event_listeners": "Listen to wishlist:added, wishlist:removed, wishlist:synced, wishlist:cleared for dynamic updates"
+  },
+  "existing_implementations": {
+    "description": "productSuggestions() already filters wishlist items but not recently viewed. recentlyViewedComponent only excludes single product ID (for product page use).",
+    "relevant_files": [
+      "wishlist.html.twig (lines 1495-1566 for productSuggestions)",
+      "wishlist.html.twig (lines 1342-1493 for wishlistPage)",
+      "components/Product/RecentlyViewed.html.twig (lines 278-314 for recentlyViewedComponent)"
+    ]
+  },
+  "root_causes": {
+    "issue_1_price_display": "loadItems() in wishlistPage() uses Promise.all() with async API calls before setting this.items - prices from store not shown until all API calls complete",
+    "issue_2_deduplication": "Three sections load independently without cross-checking - recentlyViewed doesn't exclude wishlist items, suggestions doesn't exclude recentlyViewed items"
+  },
+  "created_at": "2026-01-09T17:14:26.756381",
+  "updated_at": "2026-01-09T17:30:00.000000"
+}

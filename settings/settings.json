@@ -1,0 +1,19 @@
+{
+  "env": {
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000",
+    "MAX_THINKING_TOKENS": "31999"
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "example-skills@anthropic-agent-skills": true,
+    "document-skills@anthropic-agent-skills": true,
+    "superpowers@superpowers-dev": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "n8n-mcp-skills@n8n-mcp-skills": true
+  },
+  "alwaysThinkingEnabled": true,
+  "autoUpdatesChannel": "latest"
+}

@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Sensitive data
+*.secret
+*.key
+*.pem
+.env.local
+.env.*.local
+
+# Tresor caches (keep structure but not runtime data)
+tresor/.git/
+tresor-resources/.git/
+
+# Auto-claude runtime data (keep templates)
+project-templates/auto-claude/.locks/
+project-templates/auto-claude/file_evolution.json
+
+# Backup directories created during install
+backup_*/

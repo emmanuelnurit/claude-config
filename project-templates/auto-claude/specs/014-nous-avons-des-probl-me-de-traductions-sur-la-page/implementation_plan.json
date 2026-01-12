@@ -1,0 +1,67 @@
+{
+  "feature": "Traductions page 404",
+  "description": "Ajouter les traductions françaises manquantes pour la page 404",
+  "created_at": "2026-01-11T17:04:47.288Z",
+  "updated_at": "2026-01-11T17:12:12.561Z",
+  "status": "human_review",
+  "planStatus": "review",
+  "spec_name": "404-page-translations-fix",
+  "workflow_type": "simple",
+  "total_phases": 1,
+  "recommended_workers": 1,
+  "phases": [
+    {
+      "phase": 1,
+      "name": "Ajout des traductions",
+      "description": "Ajouter les traductions françaises manquantes pour la page 404",
+      "depends_on": [],
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Ajouter les 9 clés de traduction manquantes dans la section 404 Page translations du fichier messages.fr_FR.yaml",
+          "service": "main",
+          "status": "completed",
+          "files_to_create": [],
+          "files_to_modify": [
+            "translations/messages.fr_FR.yaml"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "run": "Visiter la page 404 en français et vérifier que tous les textes sont traduits"
+          },
+          "notes": "Added 9 missing French translation keys for the 404 page: 404 - Page Not Found, The page you are looking for does not exist., Back to Home, Return to homepage, Browse categories, Orders & settings, Saved favorites, Search for products..., View all",
+          "updated_at": "2026-01-11T17:09:25.267601+00:00"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "complexity": "simple",
+    "estimated_sessions": 1
+  },
+  "last_updated": "2026-01-11T17:12:02.738729+00:00",
+  "qa_signoff": {
+    "status": "approved",
+    "qa_session": 0,
+    "issues_found": [],
+    "tests_passed": {},
+    "timestamp": "2026-01-11T17:12:02.738693+00:00",
+    "ready_for_qa_revalidation": false
+  },
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "approved",
+      "timestamp": "2026-01-11T17:12:12.533467+00:00",
+      "issues": [],
+      "duration_seconds": 146.88
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 1,
+    "last_iteration": 1,
+    "last_status": "approved",
+    "issues_by_type": {}
+  }
+}

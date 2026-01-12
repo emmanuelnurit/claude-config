@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "plugins": {
+    "example-skills@anthropic-agent-skills": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/anthropic-agent-skills/example-skills/f23222824449",
+        "version": "f23222824449",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-08T08:56:05.482Z",
+        "gitCommitSha": "f232228244495c018b3c1857436cf491ebb79bbb"
+      }
+    ],
+    "document-skills@anthropic-agent-skills": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/anthropic-agent-skills/document-skills/f23222824449",
+        "version": "f23222824449",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-08T08:56:05.482Z",
+        "gitCommitSha": "f232228244495c018b3c1857436cf491ebb79bbb"
+      }
+    ],
+    "superpowers@superpowers-dev": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/superpowers-dev/superpowers/4.0.0",
+        "version": "4.0.0",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-08T08:56:05.482Z",
+        "gitCommitSha": "80643c26040437740d4a185ed5693d365ca3aeec"
+      }
+    ],
+    "context7@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/claude-plugins-official/context7/f1be96f0fb58",
+        "version": "f1be96f0fb58",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-09T11:46:02.357Z",
+        "gitCommitSha": "113b335d11aee7f33e81a9d9139649c5be657329"
+      }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/claude-plugins-official/frontend-design/f1be96f0fb58",
+        "version": "f1be96f0fb58",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-09T11:46:02.366Z",
+        "gitCommitSha": "113b335d11aee7f33e81a9d9139649c5be657329"
+      }
+    ],
+    "playwright@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/claude-plugins-official/playwright/f1be96f0fb58",
+        "version": "f1be96f0fb58",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-09T11:46:02.372Z",
+        "gitCommitSha": "113b335d11aee7f33e81a9d9139649c5be657329"
+      }
+    ],
+    "serena@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/claude-plugins-official/serena/f1be96f0fb58",
+        "version": "f1be96f0fb58",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-09T11:46:02.383Z",
+        "gitCommitSha": "113b335d11aee7f33e81a9d9139649c5be657329"
+      }
+    ],
+    "n8n-mcp-skills@n8n-mcp-skills": [
+      {
+        "scope": "user",
+        "installPath": "/Users/enurit/.claude/plugins/cache/n8n-mcp-skills/n8n-mcp-skills/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-01-08T08:56:05.482Z",
+        "lastUpdated": "2026-01-08T08:56:05.482Z",
+        "gitCommitSha": "ec350daa6e148733ddb7d0c74b25c8dc69879b12"
+      }
+    ]
+  }
+}

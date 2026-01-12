@@ -1,0 +1,21 @@
+{
+  "id": "session-1767947936039",
+  "projectId": "12be71d4-a14e-4b96-ab01-5eda3b372835",
+  "title": "je vois une erreur sur la page favori, le titre n'...",
+  "messages": [
+    {
+      "id": "msg-1767965429877",
+      "role": "user",
+      "content": "je vois une erreur sur la page favori, le titre n'est pas traduit",
+      "timestamp": "2026-01-09T13:30:29.877Z"
+    },
+    {
+      "id": "msg-1767966164098",
+      "role": "user",
+      "content": "erreur sur favori",
+      "timestamp": "2026-01-09T13:42:44.098Z"
+    }
+  ],
+  "createdAt": "2026-01-09T08:38:56.039Z",
+  "updatedAt": "2026-01-09T13:42:44.098Z"
+}

@@ -1,0 +1,29 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "ui_ux_improvements",
+  "ideaId": "uiux-002",
+  "rationale": "The current 404 page is minimal - just a large '404', brief text, and a home link. Users who land on broken links are high-intent visitors who deserve a better recovery path. An enhanced 404 can recover these potential customers.",
+  "category": "ui_ux",
+  "uiuxCategory": "usability",
+  "affectedFiles": [
+    "404.html.twig"
+  ],
+  "problemSolved": "Basic 404 page with large error code, 'Page Not Found' title, explanation text, and single 'Back to Home' button. No search or product suggestions.",
+  "model": "opus",
+  "thinkingLevel": "high",
+  "isAutoProfile": true,
+  "phaseModels": {
+    "spec": "opus",
+    "planning": "opus",
+    "coding": "opus",
+    "qa": "opus"
+  },
+  "phaseThinking": {
+    "spec": "ultrathink",
+    "planning": "high",
+    "coding": "low",
+    "qa": "low"
+  },
+  "requireReviewBeforeCoding": false,
+  "archivedAt": "2026-01-09T14:43:35.263Z"
+}

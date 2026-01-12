@@ -1,0 +1,4 @@
+{
+  "task_description": "nous devons créer un module pour la fonctionnalité whislist avancée de notre template, nous appelerons le modul dans les prérequis de composer json",
+  "workflow_type": "feature"
+}
